@@ -1,0 +1,207 @@
+Quero adaptar este projeto para rodar no Vercel com o frontend estático (Vite) e backend como funções serverless (sem Express rodando em servidor dedicado). Faça as alterações a seguir exatamente:
+
+1) Estrutura de pastas e build
+
+Manter a estrutura atual com client/ (Vite) e server/ (não será usado em produção).
+
+Criar uma pasta api/ na raiz do projeto (mesmo nível do package.json).
+
+O Vite já está configurado com root: client e build.outDir: dist/public. Não mude isso.
+
+2) Migrar rota /api/contact do Express para serverless
+
+Baseie-se na rota existente em server/routes.ts (app.post("/api/contact", ...)) e crie o arquivo api/contact.ts com o seguinte conteúdo (mesma lógica de validação/resposta; usar zod):
+
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Nome é obrigatório"),
+  phone: z.string().min(1, "Telefone é obrigatório"),
+  school: z.string().optional(),
+  neighborhood: z.string().optional(),
+  message: z.string().min(1, "Mensagem é obrigatória"),
+});
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ success: false, message: "Método não permitido" });
+  }
+
+  try {
+    const validatedData = contactSchema.parse(req.body);
+
+    // Log semelhante ao que já existe
+    console.log("Contact form submission:", {
+      name: validatedData.name,
+      phone: validatedData.phone,
+      school: validatedData.school,
+      neighborhood: validatedData.neighborhood,
+      message: validatedData.message,
+      timestamp: new Date().toISOString(),
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Mensagem enviada com sucesso",
+    });
+  } catch (error: any) {
+    if (error?.name === "ZodError") {
+      return res.status(400).json({
+        success: false,
+        message: "Erro de validação",
+        errors: error.errors,
+      });
+    }
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Erro interno do servidor",
+    });
+  }
+}
+
+
+Observações:
+
+Não importe nem use express nas funções serverless.
+
+O frontend já chama apiRequest("POST", "/api/contact", ...) (em client/src/pages/contato.tsx), então não altere o path.
+
+3) Ajustar tsconfig.json
+
+Incluir a pasta api no include.
+
+Adicionar os tipos do Vercel para melhor DX local.
+
+Edite tsconfig.json para ficar assim (apenas os campos abaixo precisam estar presentes):
+
+{
+  "include": ["client/src/**/*", "shared/**/*", "server/**/*", "api/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "strict": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "types": ["node", "vite/client", "@vercel/node"],
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@shared/*": ["./shared/*"]
+    }
+  }
+}
+
+4) Ajustar package.json
+
+Remover o bundle do servidor do build (não será usado).
+
+Manter o build do Vite (gera dist/public).
+
+Opcional: definir engines do Node para o Vercel.
+
+Atualize os scripts do package.json para:
+
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "tsc",
+    "db:push": "drizzle-kit push"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.2.20"
+  }
+}
+
+
+Observações:
+
+Se existirem outras chaves além de scripts/engines/devDependencies, mantenha-as como estão.
+
+Não remova dependências do projeto. Só ajuste os scripts.
+
+@vercel/node aqui é só para tipos em desenvolvimento.
+
+5) Criar vercel.json
+
+Criar vercel.json na raiz com a config de build estático + funções e fallback do SPA:
+
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.ts", "use": "@vercel/node" },
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/public" } }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  }
+}
+
+
+Explicação:
+
+@vercel/static-build vai rodar npm run build (Vite) e servir dist/public.
+
+O fallback /(.*) -> /index.html garante que o SPA (usa wouter) funcione ao recarregar URLs internas.
+
+As rotas /api/* continuam indo para as funções serverless.
+
+6) Conferências rápidas
+
+client/src/pages/contato.tsx deve continuar postando em "/api/contact". Não mude.
+
+zod já está nas dependências — manter como está.
+
+Não precisamos do server/index.ts/server/vite.ts no Vercel; não apague, só não são usados em produção.
+
+vite.config.ts já tem root: client e outDir: dist/public; não altere.
+
+Remover qualquer referência a iniciar servidor Express em produção (já resolvido ao mudar scripts).
+
+7) Passos de deploy (para o README)
+
+Inclua (ou atualize) no README.md uma seção com:
+
+## Deploy no Vercel
+
+1. Faça push do repositório no GitHub/GitLab/Bitbucket.
+2. No Vercel, crie um novo projeto a partir do repositório.
+3. Configure:
+   - Install Command: `npm install` (padrão)
+   - Build Command: `npm run build`
+   - Output Directory: `dist/public`
+4. Verifique se o arquivo `vercel.json` está na raiz (ele cuida das rotas e das funções em `api/`).
+5. Deploy.
+
+### Testes
+- Frontend: abra a URL principal do Vercel.
+- API: `curl -X POST https://SEU-PROJETO.vercel.app/api/contact -H "Content-Type: application/json" -d '{"name":"Fulano","phone":"9999-9999","message":"oi"}'`
+  - Esperado: `{ "success": true, "message": "Mensagem enviada com sucesso" }`.
+
+8) Entregáveis finais
+
+Arquivo api/contact.ts criado.
+
+tsconfig.json atualizado conforme instruído.
+
+package.json com scripts ajustados e @vercel/node em devDependencies.
+
+vercel.json criado.
