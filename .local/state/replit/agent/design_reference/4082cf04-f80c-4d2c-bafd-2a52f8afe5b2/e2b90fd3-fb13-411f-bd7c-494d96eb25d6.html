@@ -1,0 +1,1054 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte Escolar Tio Márcio - Segurança e Confiança</title>
+    <meta name="description" content="Transporte escolar seguro e confiável em Fortaleza. Atendemos Cidade dos Funcionários, Cambeba, Parque del Sol e Seis Bocas.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    sans: ["var(--font-sans)"],
+                }
+            },
+        }
+    };
+    </script>
+    
+    <style>
+        :root {
+            --background: hsl(0 0% 100%);
+            --foreground: hsl(0 0% 3.9%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(0 0% 3.9%);
+            --primary: hsl(51 100% 50%);
+            --primary-foreground: hsl(0 0% 0%);
+            --secondary: hsl(0 0% 0%);
+            --secondary-foreground: hsl(0 0% 100%);
+            --muted: hsl(0 0% 96.1%);
+            --muted-foreground: hsl(0 0% 45.1%);
+            --accent: hsl(142 76% 36%);
+            --accent-foreground: hsl(0 0% 100%);
+            --border: hsl(0 0% 89.8%);
+            --ring: hsl(51 100% 50%);
+            --radius: 0.5rem;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 16px;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground">
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/5585981397420" target="_blank" class="whatsapp-float" title="Chamar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="bg-secondary text-secondary-foreground shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-bus text-primary-foreground text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">Tio Márcio</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" onclick="showPage('home')" class="nav-link hover:text-primary transition-colors cursor-pointer">Início</a>
+                    <a href="#sobre" onclick="showPage('sobre')" class="nav-link hover:text-primary transition-colors cursor-pointer">Sobre</a>
+                    <a href="#depoimentos" onclick="showPage('depoimentos')" class="nav-link hover:text-primary transition-colors cursor-pointer">Depoimentos</a>
+                    <a href="#faq" onclick="showPage('faq')" class="nav-link hover:text-primary transition-colors cursor-pointer">FAQ</a>
+                    <a href="#contato" onclick="showPage('contato')" class="nav-link hover:text-primary transition-colors cursor-pointer">Contato</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-secondary-foreground hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary border-t border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" onclick="showPage('home'); toggleMobileMenu()" class="block px-3 py-2 hover:text-primary transition-colors cursor-pointer">Início</a>
+                <a href="#sobre" onclick="showPage('sobre'); toggleMobileMenu()" class="block px-3 py-2 hover:text-primary transition-colors cursor-pointer">Sobre</a>
+                <a href="#depoimentos" onclick="showPage('depoimentos'); toggleMobileMenu()" class="block px-3 py-2 hover:text-primary transition-colors cursor-pointer">Depoimentos</a>
+                <a href="#faq" onclick="showPage('faq'); toggleMobileMenu()" class="block px-3 py-2 hover:text-primary transition-colors cursor-pointer">FAQ</a>
+                <a href="#contato" onclick="showPage('contato'); toggleMobileMenu()" class="block px-3 py-2 hover:text-primary transition-colors cursor-pointer">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page-content">
+        <!-- Hero Section -->
+        <section class="hero-bg text-primary-foreground py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in">
+                    <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-primary text-3xl"></i>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Segurança e confiança no transporte escolar do seu filho
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                        Transporte escolar com mais de 10 anos de experiência, oferecendo segurança, pontualidade e tranquilidade para toda a família.
+                    </p>
+                    <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                        Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Tio Márcio Section -->
+        <section class="py-16 bg-muted">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Conheça o Tio Márcio</h2>
+                        <p class="text-lg text-muted-foreground mb-6">
+                            Com mais de 10 anos de experiência no transporte escolar, o Tio Márcio é sinônimo de segurança e confiabilidade. Dedicado ao bem-estar das crianças, ele oferece um serviço personalizado que prioriza a segurança, pontualidade e comunicação constante com os pais.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Licença válida</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Veículo regulamentado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-primary text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Routes and Schools -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Rotas e Escolas Atendidas</h2>
+                    <p class="text-xl text-muted-foreground">Cobrimos os principais bairros e escolas de Fortaleza</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                            Bairros Atendidos
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-home text-accent mr-3"></i>
+                                Cidade dos Funcionários
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-home text-accent mr-3"></i>
+                                Cambeba
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-home text-accent mr-3"></i>
+                                Parque del Sol
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-home text-accent mr-3"></i>
+                                Seis Bocas
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-school text-primary mr-3"></i>
+                            Escolas Parceiras
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-graduation-cap text-accent mr-3"></i>
+                                Colégio Antares
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-graduation-cap text-accent mr-3"></i>
+                                Ari de Sá
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-graduation-cap text-accent mr-3"></i>
+                                Farias Brito
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-graduation-cap text-accent mr-3"></i>
+                                Nova Dimensão
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-graduation-cap text-accent mr-3"></i>
+                                Master
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="py-16 bg-muted">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-8">Veja Nosso Transporte em Ação</h2>
+                <div class="bg-card rounded-lg shadow-lg overflow-hidden">
+                    <div class="aspect-video bg-secondary flex items-center justify-center">
+                        <div class="text-center text-secondary-foreground">
+                            <i class="fas fa-play-circle text-6xl text-primary mb-4"></i>
+                            <p class="text-xl">Vídeo Institucional</p>
+                            <p class="text-sm opacity-75">Clique para assistir</p>
+                            <!-- TODO: Embed video from Google Drive link: https://drive.google.com/file/d/1ZMi1kx0wUR9MzimWpy7ZMLAvZixvxQKg/view?usp=sharing -->
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Solicitar Informações
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Galeria de Fotos</h2>
+                    <p class="text-xl text-muted-foreground">Conheça nosso veículo e instalações</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- School transport van exterior photo -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Van escolar exterior" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                    <!-- School transport interior safety features -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Interior da van com cintos de segurança" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                    <!-- Children getting on school bus safely -->
+                    <div class="gallery-item">
+                        <img src="https://pixabay.com/get/g6e56a10a79c12e9c224e36f61c756cd64f63860c76146ea159b7e36bc5ec9207834f5d1672b7fc0bec3813f60dccec0472604b2cd19ad11efe81417960079962_1280.jpg" alt="Crianças embarcando com segurança" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                    <!-- School transport van exterior -->
+                    <div class="gallery-item">
+                        <img src="https://pixabay.com/get/g9a432ffb88d67b0b8c6eda5fab402c931ecc16124676cbc6160017e9fc1ea29accc8b8461369bdfdb6e462aba1239d5e4582699e1d71fd6e6f4fa7117de66a77_1280.jpg" alt="Van escolar estacionada na escola" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                    <!-- Parents with children at school -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Pais deixando crianças na escola" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                    <!-- School transport interior safety features -->
+                    <div class="gallery-item">
+                        <img src="https://pixabay.com/get/g675d84a0df427dcaf1895388bec111ba7963ec733fb56e072e067c25d1ecedadc4f6d8e5ef11031be21bef084d800ffafe7a3077aaf375493d1dec73499a023c_1280.jpg" alt="Equipamentos de segurança da van" class="w-full h-64 object-cover rounded-lg shadow-lg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mini FAQ -->
+        <section class="py-16 bg-muted">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Perguntas Frequentes</h2>
+                    <p class="text-xl text-muted-foreground">Principais dúvidas dos pais</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-card p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-2">Quais bairros são atendidos?</h3>
+                        <p class="text-muted-foreground">Atendemos Cidade dos Funcionários, Cambeba, Parque del Sol e Seis Bocas.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-2">Como funciona a segurança?</h3>
+                        <p class="text-muted-foreground">Veículo regularizado, cintos de segurança para todas as crianças e motorista habilitado.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-lg shadow">
+                        <h3 class="text-lg font-semibold mb-2">Como posso acompanhar o trajeto?</h3>
+                        <p class="text-muted-foreground">Mantemos comunicação direta via WhatsApp com atualizações em tempo real.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="showPage('faq')" class="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Ver Todas as Dúvidas
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Teaser -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">O Que os Pais Dizem</h2>
+                    <p class="text-xl text-muted-foreground">Depoimentos de famílias satisfeitas</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Maria S.</h4>
+                                <p class="text-sm text-muted-foreground">Mãe da Júlia</p>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Excelente profissional! Minha filha se sente segura e eu tenho total tranquilidade. Recomendo sem hesitar."</p>
+                    </div>
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carlos R.</h4>
+                                <p class="text-sm text-muted-foreground">Pai do Miguel</p>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Pontualidade impecável e comunicação excelente. O Tio Márcio é muito cuidadoso com as crianças."</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="showPage('depoimentos')" class="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Ver Todos os Depoimentos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="hero-bg text-primary-foreground py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">Garanta a Vaga do Seu Filho Agora</h2>
+                <p class="text-xl mb-8">Entre em contato e assegure o transporte escolar mais confiável da região</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                        Chamar no WhatsApp
+                    </a>
+                    <button onclick="showPage('contato')" class="bg-secondary/20 hover:bg-secondary/30 text-secondary-foreground px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Formulário de Contato
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="sobre-page" class="page-content hidden">
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-5xl font-bold mb-6">Sobre o Tio Márcio</h1>
+                    <p class="text-xl text-muted-foreground">Conheça a história e os valores que guiam nosso trabalho</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Quem é o Tio Márcio</h2>
+                        <p class="text-lg text-muted-foreground mb-6">
+                            Com mais de uma década de experiência no transporte escolar, Márcio Silva se dedica inteiramente ao bem-estar e segurança das crianças. Conhecido carinhosamente como "Tio Márcio" pelas famílias atendidas, ele transformou o transporte escolar em mais do que um serviço - é um compromisso de cuidado e responsabilidade.
+                        </p>
+                        <p class="text-lg text-muted-foreground mb-6">
+                            Nascido e criado em Fortaleza, Tio Márcio conhece profundamente as necessidades das famílias locais e se orgulha de fazer parte do dia a dia das crianças, garantindo que cheguem à escola em segurança e com alegria.
+                        </p>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-80 h-80 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-primary text-9xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-muted p-8 rounded-lg mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Nossos Compromissos</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-shield-alt text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Segurança</h3>
+                                <p class="text-muted-foreground">Veículo totalmente regularizado com todas as certificações exigidas, equipamentos de segurança e manutenção periódica rigorosa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-clock text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Pontualidade</h3>
+                                <p class="text-muted-foreground">Horários rigorosamente cumpridos para que as crianças cheguem sempre no horário certo à escola e em casa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-comments text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Comunicação</h3>
+                                <p class="text-muted-foreground">Canal direto com os pais via WhatsApp para atualizações, avisos e total transparência no atendimento.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-certificate text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Regulamentação</h3>
+                                <p class="text-muted-foreground">Todas as licenças e documentações em dia, seguindo rigorosamente as normas de transporte escolar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Missão, Visão e Valores</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bullseye text-primary-foreground text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Missão</h3>
+                            <p class="text-muted-foreground">Proporcionar transporte escolar seguro e confiável, contribuindo para a educação e tranquilidade das famílias.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-eye text-primary-foreground text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Visão</h3>
+                            <p class="text-muted-foreground">Ser referência em transporte escolar em Fortaleza, reconhecido pela excelência e cuidado com as crianças.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-primary-foreground text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Valores</h3>
+                            <p class="text-muted-foreground">Segurança, responsabilidade, transparência, pontualidade e amor pelas crianças.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Testimonials Page -->
+    <div id="depoimentos-page" class="page-content hidden">
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-5xl font-bold mb-6">Depoimentos dos Pais</h1>
+                    <p class="text-xl text-muted-foreground">Veja o que as famílias que confiam no Tio Márcio têm a dizer</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Maria S.</h4>
+                                <p class="text-sm text-muted-foreground">Mãe da Júlia - Ari de Sá</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Excelente profissional! Minha filha se sente segura e eu tenho total tranquilidade. Recomendo sem hesitar. A pontualidade é impecável e a comunicação é excelente."</p>
+                    </div>
+
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carlos R.</h4>
+                                <p class="text-sm text-muted-foreground">Pai do Miguel - Farias Brito</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Pontualidade impecável e comunicação excelente. O Tio Márcio é muito cuidadoso com as crianças. Meu filho sempre chega feliz em casa."</p>
+                    </div>
+
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Ana P.</h4>
+                                <p class="text-sm text-muted-foreground">Mãe da Sophia - Antares</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Já são dois anos com o Tio Márcio e não troco por nada! Minha filha adora o 'tio' e eu fico tranquila sabendo que ela está em boas mãos."</p>
+                    </div>
+
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Roberto M.</h4>
+                                <p class="text-sm text-muted-foreground">Pai do Lucas - Nova Dimensão</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Serviço de qualidade excepcional. Van sempre limpa, segura e pontual. O Tio Márcio trata as crianças com carinho e respeito."</p>
+                    </div>
+
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Fernanda L.</h4>
+                                <p class="text-sm text-muted-foreground">Mãe da Isabella - Master</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Confiança total! Minha filha vai tranquila para a escola e eu trabalho sossegada. A comunicação via WhatsApp é fantástica."</p>
+                    </div>
+
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">João S.</h4>
+                                <p class="text-sm text-muted-foreground">Pai da Beatriz - Ari de Sá</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-muted-foreground italic">"Profissional exemplar! Sempre pontual, cordial e muito cuidadoso. Minha filha se sente segura e nós, pais, ficamos tranquilos."</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <div class="bg-muted p-8 rounded-lg max-w-2xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-4">Quer deixar seu depoimento?</h3>
+                        <p class="text-muted-foreground mb-6">Compartilhe sua experiência com o Transporte Escolar Tio Márcio</p>
+                        <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Enviar Depoimento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FAQ Page -->
+    <div id="faq-page" class="page-content hidden">
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-5xl font-bold mb-6">Perguntas Frequentes</h1>
+                    <p class="text-xl text-muted-foreground">Tire todas suas dúvidas sobre nosso serviço</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(0)">
+                            <span class="text-lg font-semibold">Quais bairros e escolas são atendidos?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Atendemos os bairros: Cidade dos Funcionários, Cambeba, Parque del Sol e Seis Bocas. As escolas parceiras são: Colégio Antares, Ari de Sá, Farias Brito, Nova Dimensão e Master. Também atendemos outras escolas mediante consulta.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(1)">
+                            <span class="text-lg font-semibold">Como garantir uma vaga?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Entre em contato conosco via WhatsApp ou formulário. Faremos uma avaliação da rota e disponibilidade. As vagas são limitadas para garantir a qualidade do serviço e segurança das crianças.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(2)">
+                            <span class="text-lg font-semibold">Quais são os horários de saída e retorno?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Os horários são personalizados conforme o cronograma de cada escola e as necessidades da família. Mantemos rigorosa pontualidade tanto na ida quanto na volta. Horários específicos são definidos no momento da contratação.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(3)">
+                            <span class="text-lg font-semibold">Como funciona a segurança no transporte?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Nosso veículo é totalmente regularizado com todas as certificações exigidas. Possui cintos de segurança para todas as crianças, equipamentos de primeiros socorros, extintor e segue todas as normas de transporte escolar. Realizamos manutenção periódica rigorosa.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(4)">
+                            <span class="text-lg font-semibold">Como posso falar com o motorista durante o trajeto?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Mantemos comunicação direta via WhatsApp. Os pais recebem atualizações sobre horários, eventuais atrasos e chegada das crianças. Em emergências, estamos sempre disponíveis para contato imediato.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(5)">
+                            <span class="text-lg font-semibold">Qual o valor do serviço?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Os valores variam conforme a distância, frequência e necessidades específicas. Entre em contato para um orçamento personalizado. Oferecemos condições especiais para irmãos e pagamento antecipado.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(6)">
+                            <span class="text-lg font-semibold">E se meu filho faltar à aula?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Solicitamos que nos informe com antecedência via WhatsApp. Isso nos ajuda a organizar melhor a rota e otimizar o tempo para as outras crianças. Não há desconto no valor mensal por faltas eventuais.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-card rounded-lg shadow">
+                        <button class="faq-question w-full p-6 text-left flex justify-between items-center hover:bg-muted transition-colors" onclick="toggleFAQ(7)">
+                            <span class="text-lg font-semibold">O que acontece em caso de emergência?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-muted-foreground">
+                            <p>Temos protocolos de emergência estabelecidos. Em caso de problemas mecânicos, mantemos contato imediato com os pais. Para emergências médicas, temos kit de primeiros socorros e contatos de emergência de todos os responsáveis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <div class="bg-muted p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Não encontrou sua dúvida?</h3>
+                        <p class="text-muted-foreground mb-6">Entre em contato conosco e teremos prazer em esclarecer todas suas questões</p>
+                        <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Falar Conosco
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contato-page" class="page-content hidden">
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-5xl font-bold mb-6">Entre em Contato</h1>
+                    <p class="text-xl text-muted-foreground">Estamos prontos para atender você e garantir o melhor transporte para seu filho</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-card p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold mb-6">Envie uma Mensagem</h2>
+                        <form data-mock="true" class="space-y-6">
+                            <!-- TODO: Implement form submission logic -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent" placeholder="Seu nome completo">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2">Telefone/WhatsApp</label>
+                                <input type="tel" id="phone" name="phone" class="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent" placeholder="(85) 9 9999-9999">
+                            </div>
+                            <div>
+                                <label for="school" class="block text-sm font-medium mb-2">Escola do Filho(a)</label>
+                                <select id="school" name="school" class="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent">
+                                    <option value="">Selecione a escola</option>
+                                    <option value="antares">Colégio Antares</option>
+                                    <option value="ari-de-sa">Ari de Sá</option>
+                                    <option value="farias-brito">Farias Brito</option>
+                                    <option value="nova-dimensao">Nova Dimensão</option>
+                                    <option value="master">Master</option>
+                                    <option value="outra">Outra escola</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="neighborhood" class="block text-sm font-medium mb-2">Bairro</label>
+                                <select id="neighborhood" name="neighborhood" class="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent">
+                                    <option value="">Selecione o bairro</option>
+                                    <option value="cidade-funcionarios">Cidade dos Funcionários</option>
+                                    <option value="cambeba">Cambeba</option>
+                                    <option value="parque-del-sol">Parque del Sol</option>
+                                    <option value="seis-bocas">Seis Bocas</option>
+                                    <option value="outro">Outro bairro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="4" class="w-full p-3 border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent" placeholder="Conte-nos sobre suas necessidades de transporte escolar..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground py-3 rounded-lg font-semibold transition-colors">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-card p-8 rounded-lg shadow-lg">
+                            <h2 class="text-2xl font-bold mb-6">Informações de Contato</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fab fa-whatsapp text-accent-foreground"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">WhatsApp</h3>
+                                        <a href="https://wa.me/5585981397420" target="_blank" class="text-accent hover:text-accent/80 transition-colors">(85) 98139-7420</a>
+                                        <p class="text-sm text-muted-foreground">Atendimento rápido e direto</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-phone text-primary-foreground"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Telefone</h3>
+                                        <a href="tel:+5585981397420" class="text-primary hover:text-primary/80 transition-colors">(85) 98139-7420</a>
+                                        <p class="text-sm text-muted-foreground">Ligações diretas</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-clock text-secondary-foreground"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Horário de Atendimento</h3>
+                                        <p class="text-muted-foreground">Segunda a Sexta: 6h às 19h</p>
+                                        <p class="text-muted-foreground">Sábado: 8h às 12h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-muted p-8 rounded-lg">
+                            <h3 class="text-xl font-bold mb-4">Atendimento Rápido pelo WhatsApp</h3>
+                            <p class="text-muted-foreground mb-6">Para um atendimento mais ágil e direto, clique no botão abaixo e fale conosco pelo WhatsApp. Responderemos rapidamente!</p>
+                            <a href="https://wa.me/5585981397420" target="_blank" class="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors w-full justify-center">
+                                <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                                Chamar no WhatsApp Agora
+                            </a>
+                        </div>
+
+                        <div class="bg-card p-8 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold mb-4">Localização de Atendimento</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                                    <span>Cidade dos Funcionários</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                                    <span>Cambeba</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                                    <span>Parque del Sol</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                                    <span>Seis Bocas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-secondary-foreground py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-bus text-primary-foreground"></i>
+                        </div>
+                        <span class="text-lg font-bold">Tio Márcio Transport</span>
+                    </div>
+                    <p class="text-sm opacity-75 mb-4">Aos pais, tranquilidade. Aos filhos, segurança e pontualidade.</p>
+                    <a href="https://wa.me/5585981397420" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm">
+                        <i class="fab fa-whatsapp mr-1"></i>
+                        (85) 98139-7420
+                    </a>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" onclick="showPage('home')" class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer">Início</a></li>
+                        <li><a href="#sobre" onclick="showPage('sobre')" class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer">Sobre</a></li>
+                        <li><a href="#depoimentos" onclick="showPage('depoimentos')" class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer">Depoimentos</a></li>
+                        <li><a href="#faq" onclick="showPage('faq')" class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer">FAQ</a></li>
+                        <li><a href="#contato" onclick="showPage('contato')" class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Escolas Atendidas</h4>
+                    <ul class="space-y-2 text-sm opacity-75">
+                        <li>Colégio Antares</li>
+                        <li>Ari de Sá</li>
+                        <li>Farias Brito</li>
+                        <li>Nova Dimensão</li>
+                        <li>Master</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Bairros Atendidos</h4>
+                    <ul class="space-y-2 text-sm opacity-75">
+                        <li>Cidade dos Funcionários</li>
+                        <li>Cambeba</li>
+                        <li>Parque del Sol</li>
+                        <li>Seis Bocas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-border/20 mt-8 pt-8 text-center">
+                <p class="text-sm opacity-75">&copy; 2024 Transporte Escolar Tio Márcio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('fade-in');
+            }
+            
+            // Update URL hash
+            window.location.hash = pageId;
+            
+            // Update nav active state
+            updateNavActiveState(pageId);
+        }
+        
+        function updateNavActiveState(activePageId) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary');
+                if (link.getAttribute('href') === '#' + activePageId) {
+                    link.classList.add('text-primary');
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+        
+        // FAQ toggle
+        function toggleFAQ(index) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const item = faqItems[index];
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Initialize page based on hash
+        function initializePage() {
+            const hash = window.location.hash.replace('#', '');
+            const validPages = ['home', 'sobre', 'depoimentos', 'faq', 'contato'];
+            const pageToShow = validPages.includes(hash) ? hash : 'home';
+            showPage(pageToShow);
+        }
+        
+        // Handle browser back/forward
+        window.addEventListener('hashchange', initializePage);
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initializePage);
+        
+        // Form submission (mock)
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission
+                    alert('Mensagem enviada! Entraremos em contato em breve.');
+                });
+            }
+        });
+        
+        // TODO: Implement Google Analytics tracking
+        // TODO: Integrate with actual contact form service (Formspree/Getform)
+        // TODO: Add proper video embedding for Google Drive video
+    </script>
+</body>
+</html>
