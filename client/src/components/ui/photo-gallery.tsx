@@ -1,35 +1,41 @@
 import { useState } from "react";
+import vanExterior from "@assets/generated_images/Van_escolar_Master_profissional_60d184f1.png";
+import vanInterior from "@assets/generated_images/Interior_van_escolar_seguro_d83e819a.png";
+import frotaVans from "@assets/generated_images/Frota_vans_escolares_organizadas_84c5b2f5.png";
+import motoristaSeguranca from "@assets/generated_images/Motorista_verificando_segurança_van_d6404ee8.png";
+import oficinaMantencao from "@assets/generated_images/Oficina_manutenção_vans_escolares_a599fdec.png";
+import criancasEmbarcando from "@assets/generated_images/Crianças_embarcando_van_segura_0fa47637.png";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Van escolar exterior",
-    title: "Van Escolar"
+    src: vanExterior,
+    alt: "Van escolar Master - exterior",
+    title: "Nossa Van Escolar"
   },
   {
-    src: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Interior da van com cintos de segurança",
+    src: vanInterior,
+    alt: "Interior da van com equipamentos de segurança",
     title: "Interior Seguro"
   },
   {
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Crianças embarcando com segurança",
+    src: frotaVans,
+    alt: "Frota de vans escolares organizadas",
+    title: "Nossa Frota"
+  },
+  {
+    src: motoristaSeguranca,
+    alt: "Motorista verificando equipamentos de segurança",
+    title: "Inspeção de Segurança"
+  },
+  {
+    src: oficinaMantencao,
+    alt: "Oficina para manutenção das vans escolares",
+    title: "Nossas Instalações"
+  },
+  {
+    src: criancasEmbarcando,
+    alt: "Crianças embarcando na van com segurança",
     title: "Embarque Seguro"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Van escolar estacionada na escola",
-    title: "Na Escola"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Pais deixando crianças na escola",
-    title: "Pais e Filhos"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1569163139394-de4e5f43e4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Equipamentos de segurança da van",
-    title: "Equipamentos de Segurança"
   }
 ];
 

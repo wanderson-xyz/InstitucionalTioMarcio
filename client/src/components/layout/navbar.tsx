@@ -1,7 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { useState } from "react";
-import { Menu, X, Bus } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoTioMarcio from "@assets/logo_pastor-removebg-preview_1756405362177.png";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -25,9 +26,11 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center" data-testid="link-home-logo">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
-                <Bus className="text-primary-foreground text-xl" />
-              </div>
+              <img 
+                src={logoTioMarcio} 
+                alt="Tio Márcio Transporte Escolar" 
+                className="h-12 w-auto mr-3"
+              />
               <span className="text-xl font-bold">Tio Márcio</span>
             </Link>
           </div>
