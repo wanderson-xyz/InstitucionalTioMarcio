@@ -1,4 +1,5 @@
-import { User, Star, MessageCircle } from "lucide-react";
+import { User, Star } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Depoimentos() {
@@ -104,7 +105,7 @@ export default function Depoimentos() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors"
               data-testid="button-cta-whatsapp"
             >
-              <MessageCircle className="mr-2 h-4 w-4" />
+              <FaWhatsapp className="mr-2 h-4 w-4" />
               Enviar Depoimento
             </a>
           </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -106,7 +107,7 @@ export default function FAQ() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors"
               data-testid="button-cta-whatsapp"
             >
-              <MessageCircle className="mr-2 h-4 w-4" />
+              <FaWhatsapp className="mr-2 h-4 w-4" />
               Falar Conosco
             </a>
           </div>

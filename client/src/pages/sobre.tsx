@@ -1,5 +1,4 @@
 import { 
-  User, 
   Shield, 
   Clock, 
   MessageCircle, 
@@ -9,6 +8,7 @@ import {
   Heart
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import tioMarcioPhoto from "@assets/image_1756404603734.png";
 
 export default function Sobre() {
   const commitments = [
@@ -77,8 +77,13 @@ export default function Sobre() {
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="w-80 h-80 bg-secondary rounded-full flex items-center justify-center">
-              <User className="text-primary text-9xl" />
+            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary">
+              <img 
+                src={tioMarcioPhoto} 
+                alt="Tio Márcio - Transporte Escolar" 
+                className="w-full h-full object-cover"
+                data-testid="img-tio-marcio-about"
+              />
             </div>
           </div>
         </div>

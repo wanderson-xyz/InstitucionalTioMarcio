@@ -1,14 +1,15 @@
 import { Link } from "wouter";
 import { 
   Shield, 
-  User, 
+  User,
   MapPin, 
   GraduationCap, 
   Home as HomeIcon, 
   Clock,
-  MessageCircle,
   Star
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import tioMarcioPhoto from "@assets/image_1756404603734.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import VideoPlayer from "@/components/ui/video-player";
@@ -80,7 +81,7 @@ export default function Home() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center transition-colors"
               data-testid="button-hero-whatsapp"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <FaWhatsapp className="mr-2 h-5 w-5" />
               Chamar no WhatsApp
             </a>
           </div>
@@ -110,8 +111,13 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="w-64 h-64 bg-secondary rounded-full flex items-center justify-center">
-                <User className="text-primary text-8xl" />
+              <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary">
+                <img 
+                  src={tioMarcioPhoto} 
+                  alt="Tio Márcio - Transporte Escolar" 
+                  className="w-full h-full object-cover"
+                  data-testid="img-tio-marcio"
+                />
               </div>
             </div>
           </div>
@@ -182,7 +188,7 @@ export default function Home() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors"
               data-testid="button-video-whatsapp"
             >
-              <MessageCircle className="mr-2 h-4 w-4" />
+              <FaWhatsapp className="mr-2 h-4 w-4" />
               Solicitar Informações
             </a>
           </div>
@@ -309,7 +315,7 @@ export default function Home() {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center transition-colors"
               data-testid="button-cta-whatsapp"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <FaWhatsapp className="mr-2 h-5 w-5" />
               Chamar no WhatsApp
             </a>
             <Link href="/contato">

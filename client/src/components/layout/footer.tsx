@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Bus, Phone, MapPin } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const navItems = [
@@ -39,16 +40,28 @@ export default function Footer() {
             <p className="text-sm opacity-75 mb-4">
               Aos pais, tranquilidade. Aos filhos, segurança e pontualidade.
             </p>
-            <a 
-              href="https://wa.me/5585981397420" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-accent hover:text-accent/80 transition-colors text-sm flex items-center"
-              data-testid="link-footer-whatsapp"
-            >
-              <Phone className="mr-1 h-4 w-4" />
-              (85) 98139-7420
-            </a>
+            <div className="space-y-2">
+              <a 
+                href="https://wa.me/5585981397420" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors text-sm flex items-center"
+                data-testid="link-footer-whatsapp"
+              >
+                <Phone className="mr-1 h-4 w-4" />
+                (85) 98139-7420
+              </a>
+              <a 
+                href="https://www.instagram.com/tiomarciotrasnporteescolar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors text-sm flex items-center"
+                data-testid="link-footer-instagram"
+              >
+                <FaInstagram className="mr-1 h-4 w-4" />
+                @tiomarciotrasnporteescolar
+              </a>
+            </div>
           </div>
           
           <div>

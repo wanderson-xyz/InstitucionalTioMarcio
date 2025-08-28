@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Phone, MessageCircle, Clock, MapPin } from "lucide-react";
+import { Phone, Clock, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -57,7 +58,7 @@ export default function Contato() {
 
   const contactInfo = [
     {
-      icon: MessageCircle,
+      icon: FaWhatsapp,
       title: "WhatsApp",
       content: "(85) 98139-7420",
       link: "https://wa.me/5585981397420",
@@ -156,7 +157,6 @@ export default function Contato() {
                       <SelectValue placeholder="Selecione a escola" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">Selecione a escola</SelectItem>
                       {schools.map((school) => (
                         <SelectItem key={school} value={school.toLowerCase().replace(/\s+/g, '-')}>
                           {school}
@@ -176,7 +176,6 @@ export default function Contato() {
                       <SelectValue placeholder="Selecione o bairro" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">Selecione o bairro</SelectItem>
                       {neighborhoods.map((neighborhood) => (
                         <SelectItem key={neighborhood} value={neighborhood.toLowerCase().replace(/\s+/g, '-')}>
                           {neighborhood}
@@ -273,7 +272,7 @@ export default function Contato() {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center transition-colors w-full justify-center"
                 data-testid="button-whatsapp-cta"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <FaWhatsapp className="mr-2 h-5 w-5" />
                 Chamar no WhatsApp Agora
               </a>
             </div>
