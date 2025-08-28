@@ -1,0 +1,239 @@
+PRD – MVP Site Institucional Transporte Escolar Tio Márcio
+1. 🎯 Objetivo
+
+Construir um site institucional moderno, responsivo e confiável para o Transporte Escolar Tio Márcio. O site deve transmitir segurança, confiança e profissionalismo, além de facilitar a captação de clientes por meio do WhatsApp e formulário de contato.
+
+2. 👤 Público-Alvo
+
+Pais e responsáveis que buscam transporte escolar seguro e confiável para seus filhos.
+
+Moradores de bairros atendidos: Cidade dos Funcionários, Cambeba, Parque del Sol, Seis Bocas.
+
+Pais de alunos das escolas: Antares, Ari de Sá, Farias Brito, Nova Dimensão e Master.
+
+3. 📌 Estrutura do MVP (Páginas e Sessões)
+3.1. Home (Página Inicial)
+
+Objetivo: Apresentar rapidamente a proposta de valor e direcionar o visitante para contato.
+
+Seções:
+
+Hero Section (topo):
+
+Fundo amarelo com preto.
+
+Logo em destaque.
+
+Headline: "Segurança e confiança no transporte escolar do seu filho".
+
+Botão CTA: “Chamar no WhatsApp” (verde).
+
+Apresentação rápida:
+
+Texto curto sobre experiência e compromisso do Tio Márcio.
+
+Mini-foto ou ícone humanizado.
+
+Rotas e Escolas Atendidas:
+
+Lista clara das rotas.
+
+Lista das escolas parceiras.
+
+Ícones ilustrativos (mapa, prédio escolar).
+
+Vídeo Institucional:
+
+Player embedado mostrando a van em funcionamento.
+
+Botão de contato logo abaixo.
+
+Galeria de Fotos:
+
+Carrossel de imagens (interior, exterior da van, faixa ESCOLAR).
+
+Mini FAQ (teaser):
+
+3 perguntas principais com botão "Veja todas as dúvidas".
+
+Depoimentos em Destaque (teaser):
+
+2 depoimentos curtos para chamar atenção.
+
+CTA Final:
+
+Grande botão: "Garanta a vaga do seu filho agora" → abre WhatsApp.
+
+3.2. Sobre
+
+Objetivo: Humanizar e transmitir confiança.
+
+Seções:
+
+Quem é o Tio Márcio:
+
+Texto sobre a experiência no transporte escolar.
+
+Foto pessoal (opcional).
+
+Compromissos:
+
+Segurança.
+
+Pontualidade.
+
+Comunicação com pais.
+
+Veículo regulamentado.
+
+3.3. Depoimentos (Nova Página)
+
+Objetivo: Provar credibilidade através de pais satisfeitos.
+
+Seções:
+
+Depoimentos em cards/carrossel:
+
+Nome abreviado do responsável (ex: "Carla S., mãe da Ana").
+
+Foto opcional (pequena, circular).
+
+Texto do depoimento.
+
+Chamada:
+
+“Pais confiam no Transporte Escolar Tio Márcio. Veja o que eles dizem.”
+
+3.4. FAQ (Perguntas Frequentes)
+
+Objetivo: Reduzir objeções e aumentar confiança.
+
+Perguntas sugeridas:
+
+Quais bairros e escolas são atendidos?
+
+Como garantir uma vaga?
+
+Quais são os horários de saída e retorno?
+
+Como funciona a segurança no transporte?
+
+Como posso falar com o motorista durante o trajeto?
+
+3.5. Contato
+
+Objetivo: Converter em lead/cliente.
+
+Elementos:
+
+Botão fixo de WhatsApp (em todas as páginas).
+
+Formulário simples:
+
+Nome
+
+Telefone
+
+Mensagem
+
+Telefone clicável (tel:)
+
+E-mail (opcional).
+
+Google Maps (opcional: exibir raio de atendimento).
+
+4. 🎨 Identidade Visual
+
+Cores:
+
+Amarelo (#FFD700).
+
+Preto (#000000).
+
+Branco (#FFFFFF).
+
+Verde do WhatsApp (#25D366).
+
+Estilo:
+
+Visual limpo, moderno, confiável.
+
+Ícones escolares (ônibus, mochila, livros).
+
+Tipografia clara e amigável (ex: Poppins, Nunito, Open Sans).
+
+5. 🚀 Funcionalidades MVP
+
+Site 100% responsivo (desktop, tablet, mobile).
+
+Botão de WhatsApp fixo/suspenso em todas as páginas.
+
+Vídeo institucional da van.
+
+Carrossel de fotos da van.
+
+Página de depoimentos.
+
+Sessão de FAQ interativa (accordion).
+
+Formulário de contato simples.
+
+SEO básico (palavras-chave: transporte escolar, segurança, nomes das escolas e bairros).
+
+Google Analytics para monitorar acessos.
+
+6. 🛠️ Tecnologias Recomendadas
+Frontend
+
+Framework: Next.js (React) → rápido, SEO-friendly.
+
+Estilização: Tailwind CSS (moderno e ágil).
+
+Carrossel/Depoimentos: Swiper.js (biblioteca de sliders).
+
+Backend (opcional no MVP)
+
+Hospedagem serverless: Vercel ou Netlify.
+
+Formulário de contato: Formspree / Getform (sem backend próprio).
+
+Integrações
+
+WhatsApp API (link direto): https://wa.me/55NUMERO
+
+Google Analytics 4 → métricas.
+
+Google Meu Negócio → reforço em buscas locais.
+
+7. 🗓️ Roadmap
+MVP (1ª versão – 2 a 3 semanas)
+
+Páginas Home, Sobre, FAQ, Depoimentos e Contato.
+
+Botão WhatsApp suspenso.
+
+Vídeo institucional.
+
+Galeria de fotos.
+
+Formulário de contato funcional.
+
+Futuras melhorias
+
+Depoimentos em vídeo de pais.
+
+Blog com dicas para pais.
+
+Área restrita para responsáveis (rastreamento, avisos, pagamentos).
+
+Integração com CRM (para captação de leads).
+
+8. ✅ Métricas de Sucesso
+
+Cliques no botão de WhatsApp.
+
+Formulários enviados.
+
+Tempo médio de permanência na página (assistir vídeo, explorar rotas).
+
+Taxa de conversão (visitas → contatos).
